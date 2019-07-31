@@ -19,6 +19,7 @@ resource "aws_autoscaling_group" "autoscaling" {
   health_check_grace_period = 300
   health_check_type         = "ELB"
   force_delete              = true
+  target_group_arn          = [aws_lb_target_group.aqua_target_group.arn]
 
   tag {
     key                 = "Name"
